@@ -36,7 +36,8 @@ app.listen(port, function() {
 if (env=== 'development') {
 	mongoose.connect('mongodb://localhost/benjel');	
 } else {
-	mongoose.connect("mongodb://chensteven:chen2sihan4@ds041571.mongolab.com:41571/heroku_6lxh0srj");	
+	// mongoose.connect("mongodb://chensteven:chen2sihan4@ds041571.mongolab.com:41571/heroku_6lxh0srj");
+	mongoose.connect(process.env.MONGOMONGODB_URI);
 }
 
 var Story = require('./models/story');
